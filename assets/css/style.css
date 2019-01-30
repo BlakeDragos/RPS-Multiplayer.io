@@ -1,0 +1,26 @@
+#player1 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+#player2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+#score {
+    text-align: center;
+}
+#chatbox {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+#chat-input {
+    margin-right: 5px;
+}
+.btn-danger {
+    margin-top: 4px;
+}
+.btn-success {
+    margin-top: 4px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <title>RPS Multiplayer</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Rock, Paper, Scissors Multiplayer Game!</h1>
+                        <p class="lead">Choose your player and test your skill!</p>
+                        <button type="button" class="btn btn-primary" id="ResetBtn">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4 center-block" id="player1">
+                    <button type="button" class="btn btn-danger" id="choose-fighter-1">Choose Figter</button>
+                    <button type="button" class="btn btn-danger option1" id="Rock1">Rock</button>
+                    <button type="button" class="btn btn-danger option1" id="Paper1">Paper</button>
+                    <button type="button" class="btn btn-danger option1" id="Scissors1">Scissors</button>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4 mx-auto" id="score">
+                <h2>Match Points:</h2>
+                <h3>Player 1:<span id="player1-score"></span></h3>
+                <h3>Ties:<span id="ties-score"></span></h3>
+                <h3>Player 2:<span id="player2-score"></span></h3>
+
+
+
+            </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 center-block" id="player2">
+                    <button type="button" class="btn btn-success" id="choose-fighter-2">Choose Figter</button>
+                    <button type="button" class="btn btn-success option2" id="Rock2">Rock</button>
+                    <button type="button" class="btn btn-success option2" id="Paper2">Paper</button>
+                    <button type="button" class="btn btn-success option2" id="Scissors2">Scissors</button>
+                </div>
+        </div>
+        <div class="row">
+            <div class="input-group input-group-lg" id="chatbox">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg"><button type="button" class="btn btn-primary"
+                            id="chat-input">Enter</button><button type="button" class="btn btn-primary" id="chat-clear">clear</button></span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                    id="chat-input-text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="chat-text">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/logic.js"></script>
+</body>
+
+</html>
