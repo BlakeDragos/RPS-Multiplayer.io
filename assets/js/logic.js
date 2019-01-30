@@ -5,7 +5,7 @@ var player1choice = "";
 var player2choice = "";
 var fighterChoice = "";
 var ResetValue = false;
-
+var playerPicked = "";
 
 // Initialize Firebase
 var config = {
@@ -41,6 +41,7 @@ Reset = function () {
 ResetGame = function () {
     player1Wins = 0;
     player2Wins = 0;
+    ties = 0;
     Player1Database.set({
         Choice: "Nothing",
         Wins: player1Wins
@@ -61,6 +62,10 @@ ResetGame = function () {
     $("#choose-fighter-1").show();
     $("#choose-fighter-2").show();
     fighterChoice = "";
+    playerPicked = "";
+    database.ref().child("PlayerCheck").set({
+        picked: playerPicked
+    })
 
 
 };
@@ -144,6 +149,16 @@ database.ref().child("Chat").on("child_removed", function (snapshot) {
     $("#chat-text").empty();
 });
 
+database.ref().child("PlayerCheck").child("picked").on("value", function (snapshot) {
+    playerPicked = snapshot.val();
+    if (playerPicked === "Player1"){
+        $("#choose-fighter-1").hide();
+    };
+    if (playerPicked === "Player2"){
+        $("#choose-fighter-2").hide();
+
+    };
+});
 
 
 
@@ -191,6 +206,10 @@ $("#choose-fighter-1").on("click", function () {
         Choice: "Nothing",
         Wins: player1Wins
     })
+    playerPicked = "Player1";
+    database.ref().child("PlayerCheck").set({
+        picked: playerPicked
+    })
 });
 
 $("#choose-fighter-2").on("click", function () {
@@ -201,6 +220,10 @@ $("#choose-fighter-2").on("click", function () {
     Player2Database.set({
         Choice: "Nothing",
         Wins: player2Wins
+    })
+    playerPicked = "Player2";
+    database.ref().child("PlayerCheck").set({
+        picked: playerPicked
     })
 });
 
