@@ -39,13 +39,15 @@ Reset = function () {
 };
 
 ResetGame = function () {
+    player1Wins = 0;
+    player2Wins = 0;
     Player1Database.set({
         Choice: "Nothing",
-        Wins: 0
+        Wins: player1Wins
     })
     Player2Database.set({
         Choice: "Nothing",
-        Wins: 0
+        Wins: player2Wins
     })
     database.ref().child("Ties").set({
         Ties: 0
